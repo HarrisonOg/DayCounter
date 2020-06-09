@@ -1,12 +1,11 @@
 package com.example.daycounter.adapters
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daycounter.R
-import com.example.daycounter.models.TimeEvent
+import com.example.daycounter.data.models.TimeEvent
 
 class EventListAdapter(
     val data: ArrayList<TimeEvent>,

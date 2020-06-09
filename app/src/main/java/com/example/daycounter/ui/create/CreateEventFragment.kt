@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.daycounter.R
-import com.example.daycounter.models.TimeEvent
+import com.example.daycounter.data.models.TimeEvent
 import com.example.daycounter.ui.main.EventListFragment
 
 /**

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.daycounter.MainActivity
 import com.example.daycounter.R
 import com.example.daycounter.adapters.EventListAdapter
-import com.example.daycounter.models.TimeEvent
+import com.example.daycounter.data.models.TimeEvent
 import com.example.daycounter.ui.create.CreateEventFragment
 import com.example.daycounter.utils.CREATE_NEW_EVENT_REQUEST_CODE
 import com.example.daycounter.utils.DATA_KEY

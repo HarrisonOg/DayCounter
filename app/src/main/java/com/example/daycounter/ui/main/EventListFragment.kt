@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.daycounter.MainActivity
 import com.example.daycounter.R
 import com.example.daycounter.adapters.EventListAdapter
 import com.example.daycounter.models.TimeEvent
 import com.example.daycounter.ui.create.CreateEventFragment
+import com.example.daycounter.utils.CREATE_NEW_EVENT_REQUEST_CODE
 import com.example.daycounter.utils.DATA_KEY
 import com.example.daycounter.utils.SHARED_PREFERENCES_KEY
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -46,6 +48,8 @@ class EventListFragment : Fragment() {
             dataList = listOf()
         }
         viewModel.setData(dataList)
+
+        addDateButton.setOnClickListener { startCreateEventFragment() }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -69,8 +73,19 @@ class EventListFragment : Fragment() {
     }
 
     private fun startCreateEventFragment() {
-        val fragmentTransaction = parentFragmentManager.beginTransaction()
+        /*parentFragmentManager.beginTransaction()
+            .replace(R.id.container, CreateEventFragment.newInstance())
+            .commitNow()*/
 
+        //
+        val createEventFragment = CreateEventFragment.newInstance()
+        val tag = CreateEventFragment::class.java.simpleName
 
+        createEventFragment.setTargetFragment(this, CREATE_NEW_EVENT_REQUEST_CODE)
+        (activity as? MainActivity)?.replace(createEventFragment, tag)
+    }
+
+    fun addEvent(event: TimeEvent) {
+        //viewmodel add event to list here
     }
 }

@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.daycounter.R
+import com.example.daycounter.models.TimeEvent
+import com.example.daycounter.ui.main.EventListFragment
 
 /**
  * separate fragment
@@ -13,12 +16,26 @@ import androidx.fragment.app.Fragment
 
 class CreateEventFragment : Fragment() {
 
+    lateinit var event: TimeEvent
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+    ): View = inflater.inflate(R.layout.create_event_dialog_fragment, container, false)
+
+    companion object {
+        fun newInstance() = EventListFragment()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+
+    fun returnWithEvent() {
+        //
+        (targetFragment as? EventListFragment)?.addEvent(event)
+        activity?.supportFragmentManager?.popBackStackImmediate()
+    }
 }

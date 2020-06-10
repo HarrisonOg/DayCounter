@@ -2,11 +2,17 @@ package com.example.daycounter.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.daycounter.data.TimeEventRepository
 import com.example.daycounter.data.models.TimeEvent
 import com.google.gson.Gson
 
 class MainViewModel : ViewModel() {
     // TODO: Implement the ViewModel
+    private val timeEventRepository: TimeEventRepository
+
+    init {
+        timeEventRepository =
+    }
 
     val events : MutableLiveData<List<TimeEvent>> by lazy {
         MutableLiveData<List<TimeEvent>>()

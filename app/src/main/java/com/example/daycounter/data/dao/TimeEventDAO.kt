@@ -1,5 +1,6 @@
 package com.example.daycounter.data.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.daycounter.data.models.TimeEvent
 
@@ -7,14 +8,14 @@ import com.example.daycounter.data.models.TimeEvent
 interface TimeEventDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertEvent(event: TimeEvent)
+    suspend fun insertEvent(event: TimeEvent)
 
-    @Update
-    fun updateEvent(event: TimeEvent)
+   /* @Update
+    suspend fun updateEvent(event: TimeEvent)*/
 
     @Delete
-    fun deleteEvent(event: TimeEvent)
+    suspend fun deleteEvent(event: TimeEvent)
 
-    @Query("SELECT * FROM timeEvent")
-    fun getAll()
+    @Query("SELECT * FROM event_table")
+    fun getAll() : LiveData<List<TimeEvent>>
 }

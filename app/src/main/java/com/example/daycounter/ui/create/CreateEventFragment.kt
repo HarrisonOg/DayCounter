@@ -76,7 +76,9 @@ class CreateEventFragment : Fragment() {
             val daysUntil = calculateTimeUntil(offsetDateTime)
 
             if(titleText.text.isNotEmpty()) {
-                val event = TimeEvent(title = titleText.text.toString(),  timeAsString = offsetDateTime.toString(), daysUntil =  daysUntil)
+                val event = TimeEvent(title = titleText.text.toString(),
+                    timeAsString = offsetDateTime.toString(),
+                    daysUntil =  daysUntil)
                 returnWithEvent(event)
             }
 

@@ -11,6 +11,5 @@ data class TimeEvent(
     @ColumnInfo(name = "time_as_string")
     val timeAsString: String,
     val daysUntil: Int,
-    val title: String,
-    val description: String
+    val title: String
 )

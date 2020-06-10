@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/title_tv_create_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title:"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/title_edit_create_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sample Title"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/title_tv_create_event"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/date_title_create_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/title_edit_create_event"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/date_text_create_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="__/__/__"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/date_title_create_event"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <Button
+        android:id="@+id/date_picker_create_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date picker"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/date_title_create_event"
+        app:layout_constraintLeft_toRightOf="@id/date_text_create_event"
+        />
+
+    <TextView
+        android:id="@+id/day_display_create_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 days ago"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/date_picker_create_event"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <Button
+        android:id="@+id/create_event_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Event"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintTop_toBottomOf="@id/day_display_create_event"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,5 +21,6 @@ class MainViewModel : ViewModel() {
         if(list != null) {
             events.addAll(list)
         }*/
+        events.value = list
     }
 }

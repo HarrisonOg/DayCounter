@@ -11,7 +11,8 @@ import com.example.daycounter.ui.main.EventListFragment
 
 /**
  * separate fragment
- * called with "
+ * called by EventListFragment
+ * expected to respond back with "addEvent" or "noEvent"
  */
 
 class CreateEventFragment : Fragment() {

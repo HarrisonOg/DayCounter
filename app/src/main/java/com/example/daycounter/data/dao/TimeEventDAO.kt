@@ -15,5 +15,6 @@ interface TimeEventDAO {
     @Delete
     fun deleteEvent(event: TimeEvent)
 
-
+    @Query("SELECT * FROM timeEvent")
+    fun getAll()
 }

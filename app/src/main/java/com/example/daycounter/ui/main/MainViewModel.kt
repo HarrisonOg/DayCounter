@@ -1,5 +1,6 @@
 package com.example.daycounter.ui.main
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.daycounter.data.models.TimeEvent
 import com.google.gson.Gson
@@ -7,16 +8,18 @@ import com.google.gson.Gson
 class MainViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 
-    val alerts = mutableListOf<TimeEvent>()
+    val events : MutableLiveData<List<TimeEvent>> by lazy {
+        MutableLiveData<List<TimeEvent>>()
+    }
 
     public fun getDataString() : String {
-        return Gson().toJson(alerts)
+        return Gson().toJson(events)
     }
 
     public fun setData(list: List<TimeEvent>?) {
-        alerts.clear()
+        /*events.clear()
         if(list != null) {
-            alerts.addAll(list)
-        }
+            events.addAll(list)
+        }*/
     }
 }

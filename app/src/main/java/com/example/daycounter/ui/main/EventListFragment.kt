@@ -87,5 +87,6 @@ class EventListFragment : Fragment() {
 
     fun addEvent(event: TimeEvent) {
         //viewmodel add event to list here
+        //if event is null, then add nothing and display list
     }
 }

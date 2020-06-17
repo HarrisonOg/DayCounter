@@ -1,32 +1,30 @@
 package com.example.daycounter.ui.main
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
+import com.example.daycounter.data.DatabaseService
 import com.example.daycounter.data.TimeEventRepository
 import com.example.daycounter.data.models.TimeEvent
 import com.google.gson.Gson
+import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(application: Application) : AndroidViewModel(application) {
     // TODO: Implement the ViewModel
-    private val timeEventRepository: TimeEventRepository
+    private val repository :TimeEventRepository
+    var events : LiveData<List<TimeEvent>>
 
     init {
-        timeEventRepository =
-    }
-
-    val events : MutableLiveData<List<TimeEvent>> by lazy {
-        MutableLiveData<List<TimeEvent>>()
+        val eventDAO = DatabaseService.getDatabase(application).Dao()
+        repository = TimeEventRepository(eventDAO)
+        events = repository.allEvents
     }
 
     public fun getDataString() : String {
         return Gson().toJson(events)
     }
 
-    public fun setData(list: List<TimeEvent>?) {
-        /*events.clear()
-        if(list != null) {
-            events.addAll(list)
-        }*/
-        events.value = list
+    fun insert(timeEvent: TimeEvent) = viewModelScope.launch {
+        repository.insert(timeEvent)
     }
+
 }

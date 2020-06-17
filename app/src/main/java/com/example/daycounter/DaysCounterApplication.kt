@@ -12,7 +12,8 @@ class DaysCounterApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        database = Room.databaseBuilder(this, DatabaseService::class.java,
+        database = Room.databaseBuilder(this,
+            DatabaseService::class.java,
             "days-counter-list-db").build()
     }
 }

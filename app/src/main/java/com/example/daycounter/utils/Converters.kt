@@ -10,7 +10,7 @@ class Converters {
     //https://developer.android.com/studio/write/java8-support#library-desugaring
 
 
-    /*private val formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME
+    private val formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME
 
     @TypeConverter
     fun toOffsetDateTime(value: String?): OffsetDateTime? {
@@ -22,5 +22,5 @@ class Converters {
     @TypeConverter
     fun fromOffsetDateTime(date: OffsetDateTime?): String? {
         return date?.format(formatter)
-    }*/
+    }
 }

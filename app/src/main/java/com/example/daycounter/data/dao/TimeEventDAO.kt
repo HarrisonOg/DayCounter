@@ -7,6 +7,12 @@ import com.example.daycounter.data.models.TimeEvent
 @Dao
 interface TimeEventDAO {
 
+    @Query("SELECT * FROM event_table ORDER BY datetime(date)")
+    fun getAllOrdered() : LiveData<List<TimeEvent>>
+
+    @Query("SELECT * FROM event_table")
+    fun getAll() : LiveData<List<TimeEvent>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEvent(event: TimeEvent)
 
@@ -15,7 +21,4 @@ interface TimeEventDAO {
 
     @Delete
     suspend fun deleteEvent(event: TimeEvent)
-
-    @Query("SELECT * FROM event_table")
-    fun getAll() : LiveData<List<TimeEvent>>
 }

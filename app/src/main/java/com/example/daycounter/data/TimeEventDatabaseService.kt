@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.daycounter.data.dao.TimeEventDAO
 import com.example.daycounter.data.models.TimeEvent
 
-@Database(entities = arrayOf(TimeEvent::class), version = 1, exportSchema = false)
+@Database(entities = [TimeEvent::class], version = 1, exportSchema = false)
 public abstract class DatabaseService : RoomDatabase() {
     abstract fun Dao() : TimeEventDAO
 

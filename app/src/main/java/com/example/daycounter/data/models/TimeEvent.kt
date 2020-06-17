@@ -3,6 +3,7 @@ package com.example.daycounter.data.models
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.OffsetDateTime
 
 @Entity(tableName = "event_table")
 data class TimeEvent(
@@ -10,7 +11,8 @@ data class TimeEvent(
     val timeAsString: String,
     @ColumnInfo(name = "days")
     val daysUntil: Int,
-    val title: String
+    val title: String,
+    val date: OffsetDateTime? = null
 ) {
     @PrimaryKey(autoGenerate = true)
     val id: Int? = 0

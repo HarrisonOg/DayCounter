@@ -9,7 +9,6 @@ import com.google.gson.Gson
 import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-    // TODO: Implement the ViewModel
     private val repository :TimeEventRepository
     var events : LiveData<List<TimeEvent>>
 
@@ -26,5 +25,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun insert(timeEvent: TimeEvent) = viewModelScope.launch {
         repository.insert(timeEvent)
     }
+
 
 }
